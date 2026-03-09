@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Buoi02/Buoi02.csproj" />
+  <Project Path="DemoSinhVien/DemoSinhVien.csproj" />
+  <Project Path="QuanLyHinhHoc/QuanLyHinhHoc.csproj" />
+</Solution>

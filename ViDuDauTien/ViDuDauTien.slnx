@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="DaoChuoi/DaoChuoi.csproj" />
+  <Project Path="DemSoLanXuatHien/DemSoLanXuatHien.csproj" />
+  <Project Path="ThongTinSV/ThongTinSV.csproj" />
+  <Project Path="ViDuDauTien/ViDuDauTien.csproj" />
+</Solution>
