@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmXuat
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "frmXuat";
             this.Text = "frmXuat";
+            this.Load += new System.EventHandler(this.frmXuat_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
