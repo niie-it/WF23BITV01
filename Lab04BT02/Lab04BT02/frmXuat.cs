@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Lab04BT02
+{
+    public partial class frmXuat : Form
+    {
+        public int SoDong { get; set; }
+        public int SoCot { get; set; }
+        public frmXuat()
+        {
+            InitializeComponent();
+        }
+    }
+}
