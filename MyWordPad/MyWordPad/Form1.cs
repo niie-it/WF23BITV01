@@ -47,28 +47,79 @@ namespace MyWordPad
                 sfd.Filter = "Text files|*.txt|My Word|*.rtf";
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    if (sfd.FileName.EndsWith(".txt"))
-                    {
-                        richTextBox1.SaveFile(sfd.FileName, RichTextBoxStreamType.PlainText);
-                        //File.WriteAllText(sfd.FileName, richTextBox1.Text);
-                    }
-                    else
-                    {
-                        richTextBox1.SaveFile(sfd.FileName, RichTextBoxStreamType.RichText);
-                    }
+                    fileName = sfd.FileName;
+                    this.Text = "Document: " + fileName;
+                    saveDataToFile(fileName, richTextBox1);
                 }
             }
             else
             {
-                if (fileName.EndsWith(".txt"))
-                {
-                    richTextBox1.SaveFile(fileName, RichTextBoxStreamType.PlainText);
-                }
-                else
-                {
-                    richTextBox1.SaveFile(fileName, RichTextBoxStreamType.RichText);
-                }
+                saveDataToFile(fileName, richTextBox1);
             }
+        }
+
+        private void saveDataToFile(string fileName, RichTextBox richTextBox1)
+        {
+            if (fileName.EndsWith(".txt"))
+            {
+                richTextBox1.SaveFile(fileName, RichTextBoxStreamType.PlainText);
+            }
+            else
+            {
+                richTextBox1.SaveFile(fileName, RichTextBoxStreamType.RichText);
+            }
+        }
+
+        private void selectFontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var fd = new FontDialog();
+            fd.ShowColor = true;
+            fd.ShowApply = true;
+            fd.Apply += new EventHandler(XuLyApplyFont);
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                richTextBox1.SelectionFont = fd.Font;
+                richTextBox1.SelectionColor = fd.Color;
+            }
+        }
+
+        private void XuLyApplyFont(object sender, EventArgs e)
+        {
+            var fd = sender as FontDialog;
+            richTextBox1.SelectionFont = fd.Font;
+            richTextBox1.SelectionColor = fd.Color;
+        }
+
+        private void fontColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var cd = new ColorDialog();
+            if (cd.ShowDialog() == DialogResult.OK)
+            {
+                richTextBox1.SelectionColor = cd.Color;
+            }
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var sfd = new SaveFileDialog();
+            sfd.Filter = "Text files|*.txt|My Word|*.rtf";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                fileName = sfd.FileName;
+                this.Text = "Document: " + fileName;
+                saveDataToFile(fileName, richTextBox1);
+            }
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fileName = string.Empty;
+            this.Text = "New document";
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Copy();
         }
     }
 }
