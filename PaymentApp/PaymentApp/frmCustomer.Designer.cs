@@ -1,5 +1,5 @@
 ﻿using System.Drawing;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 
 namespace PaymentApp
 {
@@ -31,6 +31,7 @@ namespace PaymentApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomer));
             this.label1 = new System.Windows.Forms.Label();
             this.cboCustomer = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -136,13 +137,13 @@ namespace PaymentApp
 
         }
 
-        private Label label1;
-        private ComboBox cboCustomer;
-        private Label label2;
-        private Button btnSelectPayment;
-        private Label lblPayment;
-        private Button btnSave;
-        private Button btnExit;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cboCustomer;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnSelectPayment;
+        private System.Windows.Forms.Label lblPayment;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnExit;
 
         #endregion
     }
