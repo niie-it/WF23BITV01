@@ -16,7 +16,7 @@ namespace Lab07QLHS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmQLLop());
+            Application.Run(new FrmMain());
         }
     }
 }

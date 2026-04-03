@@ -16,5 +16,17 @@ namespace Lab07QLHS
         {
             InitializeComponent();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblDongHo.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss tt");
+        }
+
+        private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmLogin();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
