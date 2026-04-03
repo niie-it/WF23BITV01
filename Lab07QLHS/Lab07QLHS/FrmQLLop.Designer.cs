@@ -115,6 +115,7 @@
             this.cboListType.Name = "cboListType";
             this.cboListType.Size = new System.Drawing.Size(392, 56);
             this.cboListType.TabIndex = 1;
+            this.cboListType.SelectedIndexChanged += new System.EventHandler(this.cboListType_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -146,7 +147,6 @@
             this.lvLop.Size = new System.Drawing.Size(1530, 549);
             this.lvLop.TabIndex = 0;
             this.lvLop.UseCompatibleStateImageBehavior = false;
-            
             // 
             // btnThoat
             // 
@@ -187,6 +187,7 @@
             this.btnThem.TabIndex = 1;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // groupBox1
             // 
@@ -266,6 +267,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "FrmQLLop";
             this.Text = "Quản lý lớp";
+            this.Load += new System.EventHandler(this.FrmQLLop_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
