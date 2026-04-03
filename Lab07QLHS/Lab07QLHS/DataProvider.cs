@@ -15,19 +15,27 @@ public class DataProvider
     }
     public static bool TruyVan_XuLy(string sql)
     {
+        SqlConnection con = new SqlConnection(ChuoiKetNoi);
+        bool kq = false;
         try
         {
-            SqlConnection con = new SqlConnection(ChuoiKetNoi);
             SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.Connection.Open();
+            con.Open();
             int count = cmd.ExecuteNonQuery();
-            cmd.Connection.Close();
-            return count > 0;
+            kq = count > 0;
         }
         catch
         {
-            return false;
+            kq = false;
         }
+        finally
+        {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+        }
+        return kq;
     }
 
     public static DataTable TruyVan_LayDuLieu(string sql)
