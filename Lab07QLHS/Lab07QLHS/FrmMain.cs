@@ -28,5 +28,12 @@ namespace Lab07QLHS
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void lỚPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmQLLop();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

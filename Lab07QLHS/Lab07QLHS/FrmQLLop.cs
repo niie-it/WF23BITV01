@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OfficeOpenXml;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -102,6 +103,41 @@ namespace Lab07QLHS
                     MessageBox.Show("Cập nhật thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            ExcelPackage.License.SetNonCommercialPersonal("My Name");
+            using (var package = new ExcelPackage())
+            {
+                var worksheet = package.Workbook.Worksheets.Add("DanhSachLop");
+                // Thêm tiêu đề cột
+                worksheet.Cells[1, 1].Value = "Mã Lớp";
+                worksheet.Cells[1, 2].Value = "Tên Lớp";
+                worksheet.Cells[1, 3].Value = "Sĩ Số";
+                // Thêm dữ liệu từ ListView
+                int row = 2; // Bắt đầu từ hàng thứ 2 (hàng 1 là tiêu đề)
+                var dtLop = DataProvider.TruyVan_LayDuLieu("SELECT MaLop, TenLop, SiSo FROM LOP");
+                foreach (DataRow item in dtLop.Rows)
+                {
+                    worksheet.Cells[row, 1].Value = item["MaLop"].ToString();
+                    worksheet.Cells[row, 2].Value = item["TenLop"].ToString();
+                    worksheet.Cells[row, 3].Value = item["SiSo"].ToString();
+                    row++;
+                }
+                // Lưu file Excel
+                var saveFileDialog = new SaveFileDialog
+                {
+                    Filter = "Excel Files|*.xlsx",
+                    Title = "Save an Excel File"
+                };
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    package.SaveAs(new System.IO.FileInfo(saveFileDialog.FileName));
+                    MessageBox.Show("Xuất Excel thành công!");
+                }
+            }
+
         }
     }
 }

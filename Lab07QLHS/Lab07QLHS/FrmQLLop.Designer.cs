@@ -45,6 +45,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnExportExcel = new System.Windows.Forms.Button();
+            this.btnImportExcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -72,10 +74,12 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.btnThoat);
             this.splitContainer1.Panel2.Controls.Add(this.btnSua);
+            this.splitContainer1.Panel2.Controls.Add(this.btnImportExcel);
+            this.splitContainer1.Panel2.Controls.Add(this.btnExportExcel);
             this.splitContainer1.Panel2.Controls.Add(this.btnXoa);
             this.splitContainer1.Panel2.Controls.Add(this.btnThem);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(1530, 1088);
+            this.splitContainer1.Size = new System.Drawing.Size(2086, 1088);
             this.splitContainer1.SplitterDistance = 707;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -96,7 +100,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.lvLop);
-            this.splitContainer2.Size = new System.Drawing.Size(1530, 707);
+            this.splitContainer2.Size = new System.Drawing.Size(2086, 707);
             this.splitContainer2.SplitterDistance = 154;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -144,7 +148,7 @@
             this.lvLop.HideSelection = false;
             this.lvLop.Location = new System.Drawing.Point(0, 0);
             this.lvLop.Name = "lvLop";
-            this.lvLop.Size = new System.Drawing.Size(1530, 549);
+            this.lvLop.Size = new System.Drawing.Size(2086, 549);
             this.lvLop.TabIndex = 0;
             this.lvLop.UseCompatibleStateImageBehavior = false;
             // 
@@ -260,11 +264,32 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Mã lớp";
             // 
+            // btnExportExcel
+            // 
+            this.btnExportExcel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportExcel.Location = new System.Drawing.Point(1569, 51);
+            this.btnExportExcel.Name = "btnExportExcel";
+            this.btnExportExcel.Size = new System.Drawing.Size(270, 119);
+            this.btnExportExcel.TabIndex = 1;
+            this.btnExportExcel.Text = "Export Excel";
+            this.btnExportExcel.UseVisualStyleBackColor = true;
+            this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
+            // 
+            // btnImportExcel
+            // 
+            this.btnImportExcel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportExcel.Location = new System.Drawing.Point(1569, 220);
+            this.btnImportExcel.Name = "btnImportExcel";
+            this.btnImportExcel.Size = new System.Drawing.Size(270, 119);
+            this.btnImportExcel.TabIndex = 1;
+            this.btnImportExcel.Text = "Import Excel";
+            this.btnImportExcel.UseVisualStyleBackColor = true;
+            // 
             // FrmQLLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1530, 1088);
+            this.ClientSize = new System.Drawing.Size(2086, 1088);
             this.Controls.Add(this.splitContainer1);
             this.Name = "FrmQLLop";
             this.Text = "Quản lý lớp";
@@ -303,5 +328,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnImportExcel;
+        private System.Windows.Forms.Button btnExportExcel;
     }
 }
