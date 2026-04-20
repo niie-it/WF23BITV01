@@ -34,8 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TxtUsername = new System.Windows.Forms.TextBox();
             this.TxtPassword = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // BtnDangNhap
@@ -47,6 +45,7 @@
             this.BtnDangNhap.TabIndex = 0;
             this.BtnDangNhap.Text = "Đăng nhập";
             this.BtnDangNhap.UseVisualStyleBackColor = true;
+            this.BtnDangNhap.Click += new System.EventHandler(this.BtnDangNhap_Click);
             // 
             // BtnThoat
             // 
@@ -91,33 +90,16 @@
             this.TxtPassword.Font = new System.Drawing.Font("Tahoma", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtPassword.Location = new System.Drawing.Point(520, 240);
             this.TxtPassword.Name = "TxtPassword";
+            this.TxtPassword.PasswordChar = '*';
             this.TxtPassword.Size = new System.Drawing.Size(279, 64);
             this.TxtPassword.TabIndex = 3;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(520, 109);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(518, 64);
-            this.textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Tahoma", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(520, 247);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(518, 64);
-            this.textBox2.TabIndex = 3;
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1117, 604);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.TxtPassword);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.TxtUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -138,7 +120,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtUsername;
         private System.Windows.Forms.TextBox TxtPassword;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
     }
 }
